@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        @RenderBody()
+        @model TaskManager.Models.Task
+
+        <h1>Create Task</h1>
+
+        <form asp-action="Create">
+            <label asp-for="Title"></label>
+            <input asp-for="Title" />
+
+            <label asp-for="Description"></label>
+            <input asp-for="Description" />
+
+            <button type="submit">Create</button>
+        </form>
+
+    </div>
+</body>
+</html>

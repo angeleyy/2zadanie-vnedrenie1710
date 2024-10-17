@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        @RenderBody()
+        @model List<TaskManager.Models.Task>
+
+        <h1>Tasks</h1>
+
+        <ul>
+            @foreach (var task in Model)
+            {
+                <li>
+                    @Html.DisplayFor(modelItem => task.Title)
+                    @if (task.IsCompleted)
+                    {
+                        <span>(Completed)</span>
+                    }
+                </li>
+            }
+        </ul>
+    </div>
+</body>
+</html>
